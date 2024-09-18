@@ -1,4 +1,5 @@
 import Image from "next/image";
+import './login_page.css';
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
           <p className="error-message" id="errorMessage">Incorrect Username or Password</p>
           
           <div className="inputbox">
-            <input type="email" placeholder="email" id="emailInput" name="Email" required/>        
+            <input type="email" placeholder="Email" id="emailInput" name="email" required/>        
           </div>
           <div className="inputbox">
             <input type="password" placeholder="Password" minLength={8} id="passwordInput" name="password" required/>
