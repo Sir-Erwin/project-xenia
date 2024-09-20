@@ -2,9 +2,12 @@
     display: flex; /* Flex layout */
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
-    min-height: 100vh; /* Full height of the viewport */
+    /*min-height: 100vh; /* Full height of the viewport */
     margin: 0; /* Remove default margin */
     background: transparent;
+
+    /*flex-wrap: wrap;
+    align-content: flex-start;*/
   }
   
   form {

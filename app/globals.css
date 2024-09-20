@@ -11,7 +11,7 @@
   display: flex; /* Activates flexbox layout */
   flex-direction: column; /* Arranges children in a column */
   align-items: center; /* Centers items horizontally */
-  justify-content: center; /* Centers items vertically */
+  justify-content:start; 
   gap: 20px; /* Adds space between items */
   padding: 20px; /* Optional: Adds padding */
 }

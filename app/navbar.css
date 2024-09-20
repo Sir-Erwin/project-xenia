@@ -1,46 +1,46 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  header {
-    width: 100%;
-    padding: 20px; /* Padding around the header */
-    background-color: #333; /* Background color of the navbar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow */
-    z-index: 1000; /* Ensures the navbar is on top */
-  }
-  
-  nav {
-    display: flex; /* Flexbox for the navigation */
-    justify-content: space-between; /* Space between the logo and categories */
-    align-items: center; /* Center vertically */
-  }
-  
-  #main-logo h1 {
-    color: white; /* Set text color to white */
-    font-size: 24px; /* Adjust font size as needed */
-  }
-  
-  #categories {
-    display: flex; /* Display list items in a row */
-    list-style: none; /* Remove default list styling */
-  }
-  
-  #categories li {
-    margin-left: 20px; /* Space between each link */
-  }
-  
-  #categories li a {
-    color: white; /* Set text color to white */
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Adjust font size as needed */
-    font-weight: 600; /* Make text a bit bolder */
-  }
-  
-  #categories li a:hover {
-    color: #ddd; /* Lighten on hover */
-    text-decoration: underline; /* Optional underline on hover */
-  }
-  
+/* CSS */
+header {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 0 auto 0 auto;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+
+#main-logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+#categories {
+  list-style-type: none;
+  display: flex;
+  margin: auto 0 auto auto;
+  padding: 0;
+}
+
+#categories li {
+  margin: 0 15px;
+}
+
+#categories li a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#categories li a:hover {
+  text-decoration: underline;
+}
