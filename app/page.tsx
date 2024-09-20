@@ -5,6 +5,7 @@ import EventMgmtForm from "./event_mgmt_form/event_mgmt_form"
 export default function Home() {
   return (
     <div>
+      <NavBar/>
       <EventMgmtForm/>
     </div>
   );

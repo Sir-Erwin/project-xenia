@@ -1,11 +1,9 @@
 // import Image from "next/image";
 import './event_mgmt_form.css';
-import NavBar from "../navbar";
 
-const eventMgmtForm = () => {
+const EventMgmtForm = () => {
     return (
         <div id = 'eventMgmt'>
-            <NavBar/>
             
             <h1>Event Management</h1>
             <form id = 'event_form' action="Submit" method="post">
