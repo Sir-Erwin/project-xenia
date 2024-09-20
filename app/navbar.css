@@ -1,0 +1,46 @@
+/* CSS */
+header {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 0 auto 0 auto;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+
+#main-logo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+}
+
+#categories {
+  list-style-type: none;
+  display: flex;
+  margin: auto 0 auto auto;
+  padding: 0;
+}
+
+#categories li {
+  margin: 0 15px;
+}
+
+#categories li a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#categories li a:hover {
+  text-decoration: underline;
+}
