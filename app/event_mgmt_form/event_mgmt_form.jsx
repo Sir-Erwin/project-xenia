@@ -69,4 +69,4 @@ const eventMgmtForm = () => {
 }
 
 
-export default eventMgmtForm
+export default EventMgmtForm
