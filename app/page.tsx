@@ -1,12 +1,15 @@
-import Image from "next/image";
+import './globals.css'
 import NavBar from "./navbar";
-import EventMgmtForm from "./event_mgmt_form/event_mgmt_form"
+import Login_Page from "./login_page";
 
 export default function Home() {
   return (
-    <div>
+    <div className="master-page">
       <NavBar/>
-      <EventMgmtForm/>
+
+      <Login_Page/>
+      
     </div>
+
   );
 }
