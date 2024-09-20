@@ -1,4 +1,3 @@
-import Image from "next/image";
 import './globals.css'
 import NavBar from "./navbar";
 import Login_Page from "./login_page";
