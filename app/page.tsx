@@ -1,15 +1,15 @@
 import Image from "next/image";
+import './globals.css'
+import NavBar from "./navbar";
 import Login_Page from "./login_page";
-import './login_page.css'
 
 export default function Home() {
   return (
-    <div>
-      <header>
-        
-      </header>
-      
+    <div className="master-page">
+      <NavBar/>
+
       <Login_Page/>
+      
     </div>
 
   );

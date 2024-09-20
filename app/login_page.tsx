@@ -1,23 +1,10 @@
+import React from 'react';
 import Image from "next/image";
 import './login_page.css';
 
 export default function Login_Page() {
   return (
-    <body>
-      <header>
-        <nav>
-          <div id="main-logo">
-            
-            <h1>Project Xenia</h1>
-
-            <ul id="categories">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="login.html">Log in</a></li>
-              <li><a href="entry.html">Sign Up</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+    <div className="Login_Container">
       
       <div id="login">
         <h1>Login</h1>
@@ -40,6 +27,6 @@ export default function Login_Page() {
         </form> 
       </div>
   
-    </body>
+    </div>
   );
 }

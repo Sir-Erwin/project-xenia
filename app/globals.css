@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.master-page {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(bg_image.jpg);
+  background-size: cover; /* Ensures the background covers the full area */
+  background-position: center; /* Centers the background image */
+  
+  min-height: 100vh; /* Full height of the viewport */
+  display: flex; /* Activates flexbox layout */
+  flex-direction: column; /* Arranges children in a column */
+  align-items: center; /* Centers items horizontally */
+  justify-content: center; /* Centers items vertically */
+  gap: 20px; /* Adds space between items */
+  padding: 20px; /* Optional: Adds padding */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
