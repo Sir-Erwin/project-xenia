@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.master-page {
+.master-container, .master-page {
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(bg_image.jpg);
   background-size: cover; /* Ensures the background covers the full area */
   background-position: center; /* Centers the background image */

@@ -19,10 +19,11 @@ nav {
   width: 100%;
 }
 
-h1 {
+#main-logo h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
   font-family: Arial, sans-serif;
+  text-decoration:solid;
 }
 
 #categories {
@@ -30,6 +31,7 @@ h1 {
   display: flex;
   margin: auto 0 auto auto;
   padding: 0;
+  color:black;
 }
 
 #categories li {
