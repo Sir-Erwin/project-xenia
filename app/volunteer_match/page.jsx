@@ -3,75 +3,37 @@ import './volunteer_match.css';
 import React from 'react';
 
 
-const VolunteerMatch = () => {
-    // State to store selected volunteer and matched event
-    const selectedVolunteerId = document.getElementById('volunteerSelect').value;
-    const matchedEventInput = document.getElementById('matchedEvent');
-
-    {/*Mock data: Volunteers and events (In a real-world app, fetch this from the database)
-    const volunteers = [
-        { id: 1, name: 'Alice Johnson', skills: ['Teaching', 'Event Management'] },
-        { id: 2, name: 'John Doe', skills: ['Medical Aid', 'First Aid'] },
-        { id: 3, name: 'Sarah Williams', skills: ['Cooking', 'Fundraising'] }
-    ];
-
-    const events = [
-        { id: 1, name: 'Community Teaching Event', requiredSkills: ['Teaching'] },
-        { id: 2, name: 'Health Camp', requiredSkills: ['Medical Aid', 'First Aid'] },
-        { id: 3, name: 'Fundraising Dinner', requiredSkills: ['Fundraising'] }
-    ];
-    */}
-
-    // Function to handle volunteer selection and event matching
-    const handleVolunteerChange = (event) => {
-        const volunteerId = event.target.value;
-        setSelectedVolunteerId(volunteerId);
-
-        // Find the selected volunteer
-        const selectedVolunteer = volunteers.find(v => v.id === parseInt(volunteerId));
-
-        if (selectedVolunteer) {
-            // Match event based on volunteer's skills
-            const matchedEvent = events.find(event =>
-                event.requiredSkills.some(skill => selectedVolunteer.skills.includes(skill))
-            );
-
-            if (matchedEvent) {
-                setMatchedEvent(matchedEvent.name);
-            } else {
-                setMatchedEvent('No suitable event found');
-            }
-        } else {
-            setMatchedEvent('');
-        }
-    };
-
+ const VolunteerMatch = () => {
     return (
         <div id='matching'>
             <h1>Volunteer Matching</h1>
-            <hr />
-            <form>
-                {/* Volunteer Dropdown */}
-                <div className="inputbox">
-                    <label htmlFor="volunteerSelect">Volunteer Name:</label>
-                    <select id="volunteerSelect" value={selectedVolunteerId} onChange={handleVolunteerChange}>
-                        <option value="">Select Volunteer</option>
-                        {volunteers.map(volunteer => (
-                            <option key={volunteer.id} value={volunteer.id}>
-                                {volunteer.name}
-                            </option>
-                        ))}
-                    </select>
+            <form id = 'event_form' action="Submit" method="post">
+        
+                <div className="dropdown">
+                <label htmlFor="Volunteer">Name:</label>
+                <select id="Volunteer" name="Volunteer Name" required>
+                    <option value="">Volunteer Name...</option>
+                    <option value="name1">Erwin Puthoor Manoj</option>
+                    <option value="name2">Joshua Rodriguez</option>
+                    <option value="name3">Ahad Adesanya</option>
+                    <option value="name4">Ben Cornick</option>
+                </select>
                 </div>
 
-                {/* Matched Event Field */}
-                <div className="inputbox">
-                    <label htmlFor="matchedEvent">Matched Event:</label>
-                    <input type="text" id="matchedEvent" value={matchedEvent} readOnly />
+                <div className="dropdown">
+                <label htmlFor="eventname">Events</label>
+                <select id="Event" name="Events" required>
+                    <option value="">Events...</option>
+                    <option value="event1">School</option>
+                    <option value="event2">Church</option>
+                    <option value="event3">Food Bank</option>
+                    <option value="event4">Daycare</option>
+                </select>
                 </div>
 
-                {/* Submit Button (optional, for further actions) */}
-                <button type="submit">Confirm Match</button>
+                <div>
+                    <input type='submit' value='Confirm Match'/>
+                </div>
             </form>
         </div>
     );
