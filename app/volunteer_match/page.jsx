@@ -1,10 +1,12 @@
 
-import './volunteer_match.css';  // Import your CSS for styling
+import './volunteer_match.css'; 
+import React from 'react';
+
 
 const VolunteerMatch = () => {
     // State to store selected volunteer and matched event
-    const [selectedVolunteerId, setSelectedVolunteerId] = useState('');
-    const [matchedEvent, setMatchedEvent] = useState('');
+    const selectedVolunteerId = document.getElementById('volunteerSelect').value;
+    const matchedEventInput = document.getElementById('matchedEvent');
 
     {/*Mock data: Volunteers and events (In a real-world app, fetch this from the database)
     const volunteers = [
