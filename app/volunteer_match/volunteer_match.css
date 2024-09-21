@@ -1,0 +1,109 @@
+body {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../bg_image.jpg);
+    background-size: cover;  /* Ensures the background covers the full area */
+    background-position: center;  /* Centers the background image */     
+}
+
+h1{
+    color: white;
+    font-size: xx-large;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    background: transparent;
+}
+
+label {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+select, input, textarea{
+    color: black;
+    border: 1px solid gray;
+}
+
+input[type=text]{   /* formatting for textboxes */
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea{   /* formatting for textareas */
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=date]:invalid::-webkit-datetime-edit {
+    color: #999;
+    
+}
+input[type=date]{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 10px;
+    margin: 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: boder-box;
+}
+
+select{
+    display: flex;
+    justify-content: left;
+    padding: 10px 30px;
+    margin: 25px 0px;
+    border: content;
+    border-radius: 4px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 10px 30px;
+    margin: 25px 0px;
+    border: content;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type=submit]:hover{
+    background-color: #000000;
+    color: white;
+    transition: background-color 100ms ease-out 100ms;
+    transition: color 50ms ease out 100ms;
+}
+
+
+div{
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+
