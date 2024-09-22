@@ -9,9 +9,9 @@ export default function NavBar(){
             <h1>Project Xenia</h1>
 
             <ul id="categories">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="login.html">Log in</a></li>
-              <li><a href="entry.html">Sign Up</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="login">Log in</a></li>
+              <li><a href="login">Sign Up</a></li>
             </ul>
           </div>
         </nav>

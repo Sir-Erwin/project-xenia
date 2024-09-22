@@ -1,13 +1,10 @@
-import './globals.css'
-import NavBar from "./navbar";
-import Login_Page from "./login_page";
+import './globals.css';
 
 export default function Home() {
   return (
     <div className="master-page">
-      <NavBar/>
 
-      <Login_Page/>
+      <h1>Welcome to Xenia</h1>
       
     </div>
 

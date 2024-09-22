@@ -1,10 +1,14 @@
 .Login_Container {
-    display: flex; /* Flex layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    /*min-height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
-    background: transparent;
+
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../bg_image.jpg);
+  background-size: cover; /* Ensures the background covers the full area */
+  background-position: center; /* Centers the background image */
+
+  display: flex; /* Flex layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  
+  min-height: 89.1vh;
 
     /*flex-wrap: wrap;
     align-content: flex-start;*/
@@ -12,6 +16,7 @@
   
   form {
     margin: auto;
+    background: transparent;
   }
   
   button:disabled {
