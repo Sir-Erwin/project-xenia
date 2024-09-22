@@ -1,12 +1,14 @@
 /* CSS */
 header {
   width: 100%;
-  padding: 10px 20px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto auto auto;
   height: auto;
+
+  background-color: rgb(28, 34, 34);
 }
 
 nav {
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +26,8 @@ nav {
   font-size: 28px;
   font-family: Arial, sans-serif;
   text-decoration:solid;
+
+  color: white;
 }
 
 #categories {
@@ -31,7 +35,6 @@ nav {
   display: flex;
   margin: auto 0 auto auto;
   padding: 0;
-  color:black;
 }
 
 #categories li {
@@ -41,6 +44,7 @@ nav {
 #categories li a {
   text-decoration: none;
   font-size: 18px;
+  color: white;
 }
 
 #categories li a:hover {

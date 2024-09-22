@@ -26,11 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body id="master-container"
+      <body id="master-container" style={{margin:0}}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavBar/>
+
         {children}
+
+        {/*<p>By Group 41</p>*/}
       </body>
     </html>
   );
