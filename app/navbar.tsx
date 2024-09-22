@@ -11,7 +11,7 @@ export default function NavBar(){
             <ul id="categories">
               <li><a href="/">Home</a></li>
               <li><a href="login">Log in</a></li>
-              <li><a href="entry">Sign Up</a></li>
+              <li><a href="login">Sign Up</a></li>
             </ul>
           </div>
         </nav>
