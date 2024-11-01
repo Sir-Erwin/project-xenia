@@ -3,11 +3,13 @@ import './event_mgmt_form.css';
 
 const EventMgmtForm = () => {
     return (
-        <div id = 'eventMgmt'>
+        <div className='eventMgmtContainer'>
             
+        <div id = 'eventMgmt'>
             <h1>Event Management</h1>
+            <hr/>
             <form id = 'event_form' action="Submit" method="post">
-
+            
                 <div className="inputbox"> {/* Textbox for event name with max length of 100 characters */}
                     <label for='eventNameInput'>Event Name:</label>
                     <input type='text' placeholder="Event Name..." id="eventNameInput" 
@@ -62,6 +64,7 @@ const EventMgmtForm = () => {
                     <input type='submit' value='Submit'/>
                 </div>
             </form>
+        </div>
         </div>
     );
 }
