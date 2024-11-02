@@ -38,6 +38,7 @@ const VolunteerHistory = () => {
     return (
       <div className="history">
         <h1>Volunteer  History</h1>
+        <hr/>
         <table className="history-table">
           <thead>
             <tr>
