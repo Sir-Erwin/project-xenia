@@ -1,12 +1,18 @@
-body {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../bg_image.jpg);
-    background-size: cover;  /* Ensures the background covers the full area */
-    background-position: center;  /* Centers the background image */
-}
+.eventMgmtContainer {
+    
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../bg_image.jpg);
+  background-size: cover; /* Ensures the background covers the full area */
+  background-position: center; /* Centers the background image */
 
-h1{
-    color: white;
-    font-size: xx-large;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  
+  min-height: 89.1vh;
+  padding: 30px;
+
+    /*flex-wrap: wrap;
+    align-content: flex-start;*/
 }
 
 form {
@@ -15,43 +21,77 @@ form {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     min-height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
+    margin: auto; /* Remove default margin */
     background: transparent;
 }
+
+h1{
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+
+hr {
+    margin: 0 50px; /* Margin to left and right */
+    margin-bottom: 20px;
+}
+
+#eventMgmt{
+    background-color: transparent;
+    box-shadow: 5px 10px 50px grey;
+    backdrop-filter: blur(20px);
+    width: 300px;
+    height: 790px;
+    border-radius: 10px;
+    padding: 30px;
+
+}
+/* 
+.inputbox input{
+    color: white;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    background: transparent;
+} */
 
 label {
     display: grid;
     justify-content: center;
     margin-bottom: 5px;
+    color: white;
 }
 
 ::placeholder {
-    color: #ccc;
+    color:white;
 }
 
-select, input, textarea{
+/* select, input, textarea{
     color: black;
     border: 1px solid gray;
-}
+    width: 100%;
+} */
 
 input[type=text]{   /* formatting for textboxes */
+    color: white;
     width: 100%;
-    padding: 6px 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    background: transparent;
 }
 
 textarea{   /* formatting for textareas */
+    color: white;
     width: 100%;
-    padding: 6px 10px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    background: transparent;
     box-sizing: border-box;
+    color: white;
+    resize: none;
 }
 
 input[type=date]:invalid::-webkit-datetime-edit {
@@ -67,7 +107,9 @@ input[type=date]{
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: boder-box;
+    box-sizing: border-box;
+    background: transparent;
+    color: white;
 }
 
 select{
@@ -77,12 +119,19 @@ select{
     margin: 25px 0px;
     border: content;
     border-radius: 4px;
+    background: transparent;
+    color: white;
 }
+
+#urg option{
+    background-color: #000000;
+    color: white;
+} 
 
 input[type=submit] {
     width: 100%;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background-color: gray;
+    color: black;
     padding: 10px 30px;
     margin: 25px 0px;
     border: content;
@@ -91,15 +140,17 @@ input[type=submit] {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    font-size: 15px;
+    font-weight: 600;
 }
 input[type=submit]:hover{
     background-color: #000000;
-    color: white;
+    color: gray;
     transition: background-color 100ms ease-out 100ms;
     transition: color 50ms ease out 100ms;
 }
-
+/* 
 div{
     border-radius: 5px;
     padding: 5px;
-}
+} */

@@ -78,6 +78,10 @@
   
   button:hover {
     cursor: pointer;
+    background-color: #000000;
+    color: gray;
+    transition: background-color 100ms ease-out 100ms;
+    transition: color 50ms ease out 100ms;
   }
   
   button {
