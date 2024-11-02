@@ -123,10 +123,15 @@ select{
     color: white;
 }
 
+#urg option{
+    background-color: #000000;
+    color: white;
+} 
+
 input[type=submit] {
     width: 100%;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background-color: gray;
+    color: black;
     padding: 10px 30px;
     margin: 25px 0px;
     border: content;
@@ -135,10 +140,12 @@ input[type=submit] {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    font-size: 15px;
+    font-weight: 600;
 }
 input[type=submit]:hover{
     background-color: #000000;
-    color: white;
+    color: gray;
     transition: background-color 100ms ease-out 100ms;
     transition: color 50ms ease out 100ms;
 }
