@@ -7,21 +7,22 @@ body {
 h1{
     color: white;
     font-size: xx-large;
+    text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    min-height: 100vh; /* Full height of the viewport */
-    margin: 0; /* Remove default margin */
-    background: transparent;
+hr{
+    margin: 0 550px; /* Margin to left and right */
+    margin-bottom: 20px;
 }
+
 
 .history-table {
     width: 100%;
     border-collapse: separate;
+    color: white;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: 5px 10px 50px grey;
   }
   
   .history-table th, .history-table td {
@@ -36,36 +37,13 @@ form {
   }
 
   .history-table tr:hover {
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.409);
     font-weight: bold;
   }
-
-label {
-    display: grid;
-    justify-content: center;
-    margin-bottom: 5px;
-}
 
 ::placeholder {
     color: #ccc;
 }
-
-select, input, textarea{
-    color: black;
-    border: 1px solid gray;
-}
-
-
-
-select{
-    display: flex;
-    justify-content: center;
-    padding: 10px 30px;
-    margin: 25px 0px;
-    border: content;
-    border-radius: 4px;
-}
-
 
 
 div{

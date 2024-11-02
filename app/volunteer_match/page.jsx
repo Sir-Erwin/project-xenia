@@ -5,8 +5,11 @@ import React from 'react';
 
  const VolunteerMatch = () => {
     return (
-        <div id='matching'>
-            <h1>Volunteer Matching</h1>
+        <div id='matchingContainer' className='matchingContainer'>
+
+        <div id='match'>
+                <h1>Volunteer Matching</h1>
+                <hr/>
             <form id = 'event_form' action="Submit" method="post">
         
                 <div className="dropdown">
@@ -35,6 +38,7 @@ import React from 'react';
                     <input type='submit' value='Confirm Match'/>
                 </div>
             </form>
+        </div>
         </div>
     );
 };
