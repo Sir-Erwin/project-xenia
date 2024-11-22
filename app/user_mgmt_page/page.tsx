@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './user_manage.css';
+import NavBar from "../navbar";
 
 export default function User_Manage_Page() {
   const [formData, setFormData] = useState({
@@ -44,7 +45,10 @@ export default function User_Manage_Page() {
   };
 
   return (
-    <div className="ProfileManage_Container">
+    <div>
+      <NavBar/>
+
+      <div className="ProfileManage_Container">
       <div id="ProfileManage">
         <h1>User Profile Management</h1>
         <h2>Please fill out the following Information</h2>
@@ -143,5 +147,7 @@ export default function User_Manage_Page() {
         </form> 
       </div>
     </div>
+    </div>
+    
   );
 }

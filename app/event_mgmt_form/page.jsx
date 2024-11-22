@@ -1,9 +1,13 @@
 // import Image from "next/image";
 import './event_mgmt_form.css';
+import NavBar from "./navbar";
 
 const EventMgmtForm = () => {
     return (
-        <div className='eventMgmtContainer'>
+        <div>
+            <NavBar/>
+
+            <div className='eventMgmtContainer'>
             
         <div id = 'eventMgmt'>
             <h1>Event Management</h1>
@@ -66,6 +70,8 @@ const EventMgmtForm = () => {
             </form>
         </div>
         </div>
+        </div>
+        
     );
 }
 

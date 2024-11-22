@@ -1,5 +1,6 @@
 import './volunteer_hi.css'; 
 import React from 'react';
+import NavBar from "../navbar";
 
 const VolunteerHistory = () => {
     // Example data for volunteer participation history
@@ -36,7 +37,10 @@ const VolunteerHistory = () => {
     ];
   
     return (
-      <div className="history">
+      <div>
+        <NavBar/>
+
+        <div className="history">
         <h1>Volunteer  History</h1>
         <hr/>
         <table className="history-table">
@@ -60,6 +64,8 @@ const VolunteerHistory = () => {
           </tbody>
         </table>
       </div>
+      </div>
+      
     );
   };
   

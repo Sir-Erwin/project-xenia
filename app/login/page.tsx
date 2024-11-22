@@ -2,10 +2,14 @@
 
 import React from 'react';
 import './login_page.css';
+import NavBar from "../navbar";
 
 export default function Login_Page() {
   return (
-    <div className="Login_Container">
+    <div>
+      <NavBar/>
+
+      <div className="Login_Container">
       
       <div id="login">
         <h1>Login</h1>
@@ -29,5 +33,7 @@ export default function Login_Page() {
       </div>
   
     </div>
+    </div>
+    
   );
 }

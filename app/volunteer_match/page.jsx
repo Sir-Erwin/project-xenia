@@ -1,11 +1,14 @@
 
 import './volunteer_match.css'; 
 import React from 'react';
-
+import NavBar from "../navbar";
 
  const VolunteerMatch = () => {
     return (
-        <div id='matchingContainer' className='matchingContainer'>
+        <div>
+            <NavBar/>
+
+            <div id='matchingContainer' className='matchingContainer'>
 
         <div id='match'>
                 <h1>Volunteer Matching</h1>
@@ -40,6 +43,8 @@ import React from 'react';
             </form>
         </div>
         </div>
+        </div>
+        
     );
 };
 
