@@ -4,35 +4,109 @@ import React from 'react';
 
 
  const VolunteerMatch = () => {
+    const [volunteers, setVolunteers] = useState([]);
+  const [events, setEvents] = useState([]);
+  const [selectedVolunteer, setSelectedVolunteer] = useState('');
+  const [selectedEvent, setSelectedEvent] = useState('');
+  const [successMessage, setSuccessMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const volunteerResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/volunteers`);
+        const eventResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events`);
+
+        if (!volunteerResponse.ok || !eventResponse.ok) {
+          throw new Error('Failed to fetch data');
+        }
+
+        const volunteerData = await volunteerResponse.json();
+        const eventData = await eventResponse.json();
+
+        setVolunteers(volunteerData);
+        setEvents(eventData);
+      } catch (error) {
+        console.error(error.message);
+        setErrorMessage('Error fetching volunteers or events.');
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/match`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ volunteer: selectedVolunteer, event: selectedEvent }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to confirm match');
+      }
+
+      const data = await response.json();
+      setSuccessMessage('Volunteer matched successfully!');
+      setErrorMessage(null);
+      console.log('Match confirmed:', data);
+    } catch (error) {
+      console.error(error.message);
+      setErrorMessage('Error confirming match.');
+      setSuccessMessage(null);
+    }
+  };
+
     return (
         <div id='matchingContainer' className='matchingContainer'>
 
         <div id='match'>
                 <h1>Volunteer Matching</h1>
                 <hr/>
-            <form id = 'event_form' action="Submit" method="post">
+                {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+                {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+             <form id = 'event_form' action="Submit" method="post" onSubmit={handleSubmit}>
         
-                <div className="dropdown">
-                <label htmlFor="Volunteer">Name:</label>
-                <select id="Volunteer" name="Volunteer Name" required>
-                    <option value="">Volunteer Name...</option>
-                    <option value="name1">Erwin Puthoor Manoj</option>
-                    <option value="name2">Joshua Rodriguez</option>
-                    <option value="name3">Ahad Adesanya</option>
-                    <option value="name4">Ben Cornick</option>
-                </select>
-                </div>
+             <div className="dropdown">
+            <label htmlFor="Volunteer">Name:</label>
+            <select
+              id="Volunteer"
+              name="Volunteer Name"
+              value={selectedVolunteer}
+              onChange={(e) => setSelectedVolunteer(e.target.value)}
+              required
+            >
+              <option value="">Volunteer Name...</option>
+              {volunteers.map((volunteer) => (
+                <option key={volunteer.id} value={volunteer.name}>
+                  {volunteer.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
-                <div className="dropdown">
-                <label htmlFor="eventname">Events</label>
-                <select id="Event" name="Events" required>
-                    <option value="">Events...</option>
-                    <option value="event1">School</option>
-                    <option value="event2">Church</option>
-                    <option value="event3">Food Bank</option>
-                    <option value="event4">Daycare</option>
-                </select>
-                </div>
+          <div className="dropdown">
+            <label htmlFor="Event">Events:</label>
+            <select
+              id="Event"
+              name="Events"
+              value={selectedEvent}
+              onChange={(e) => setSelectedEvent(e.target.value)}
+              required
+            >
+              <option value="">Events...</option>
+              {events.map((event) => (
+                <option key={event.id} value={event.name}>
+                  {event.name}
+                </option>
+              ))}
+            </select>
+          </div>
 
                 <div>
                     <input type='submit' value='Confirm Match'/>
