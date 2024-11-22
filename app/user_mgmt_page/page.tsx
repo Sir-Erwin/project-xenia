@@ -8,8 +8,6 @@ export default function User_Management() {
   const [formError, setFormError] = useState<string | null>(null);
 
   const formAction = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Prevent default form submission
-
     const formData = new FormData(event.currentTarget);
     const formObject: Record<string, string> = {};
     formData.forEach((value, key) => {
@@ -17,7 +15,7 @@ export default function User_Management() {
     });
 
     try {
-      const res = await fetch('user_mgmt_page/api/route', {
+      const res = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
