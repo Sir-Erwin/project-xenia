@@ -21,7 +21,7 @@ const EventMgmtForm = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events`, {
+          const response = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/events/addEvent', {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
