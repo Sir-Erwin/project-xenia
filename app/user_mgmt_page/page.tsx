@@ -119,7 +119,7 @@ export default function User_Manage_Page() {
               {/* Dropdown Options will be stored in DB */}
             </div>
           </div>
-          <div className="largeinputbox">
+          <div className="inputbox">
             <input 
               type="text" 
               placeholder="Preferences" 
