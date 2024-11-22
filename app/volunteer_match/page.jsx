@@ -14,8 +14,8 @@ import React from 'react';
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const volunteerResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/volunteers`);
-        const eventResponse = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/events`);
+        const volunteerResponse = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/users/allusers');
+        const eventResponse = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/events/allevents');
 
         if (!volunteerResponse.ok || !eventResponse.ok) {
           throw new Error('Failed to fetch data');
