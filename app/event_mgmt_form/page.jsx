@@ -1,6 +1,6 @@
 // import Image from "next/image";
 import './event_mgmt_form.css';
-import NavBar from "./navbar";
+import NavBar from "../navbar";
 
 const EventMgmtForm = () => {
     return (

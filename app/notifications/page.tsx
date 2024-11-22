@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './notifications.css';
 
 
-export default function Login_Page() {
+export default function Notifications() {
     
   return (
     <div className="Notifications_Container">
