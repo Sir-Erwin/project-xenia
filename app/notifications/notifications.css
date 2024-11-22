@@ -3,6 +3,10 @@
     background-image: url(https://uploads-ssl.webflow.com/62e3ee10882dc50bcae8d07a/631a5d4631d4c55a475f3e34_noise-50.png);
 }*/
 
+*{
+  color: white;
+}
+
 body {
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../bg_image.jpg");
     background-size: cover;  /* Ensures the background covers the full area */
@@ -13,7 +17,7 @@ body {
 *{
     box-sizing: border-box;
 }
-@@ -10,7 +18,6 @@ body {
+body {
     width: 100%;
     /*background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(sunrise.jpg);*/
     background-position: center;
@@ -22,6 +26,7 @@ body {
 }
 
 .Notifications_Container {
+  height: 100vh;
     display: flex;
     table-layout: fixed;
     background: transparent;
