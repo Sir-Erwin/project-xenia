@@ -6,7 +6,13 @@ import NavBar from "../navbar";
  const VolunteerMatch = () => {
     return (
         <div>
-            <NavBar/>
+            <header>
+                <nav>
+                <div id="main-logo">
+                    <h1><a href="/">Project Xenia</a></h1>
+                </div>
+                </nav>
+            </header>
 
             <div id='matchingContainer' className='matchingContainer'>
 

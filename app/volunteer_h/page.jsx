@@ -38,7 +38,13 @@ const VolunteerHistory = () => {
   
     return (
       <div>
-        <NavBar/>
+        <header>
+          <nav>
+            <div id="main-logo">
+              <h1><a href="/">Project Xenia</a></h1>
+            </div>
+          </nav>
+        </header>
 
         <div className="history">
         <h1>Volunteer  History</h1>

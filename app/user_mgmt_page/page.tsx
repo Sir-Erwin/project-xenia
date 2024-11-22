@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import './user_manage.css';
-import NavBar from "../navbar";
 
 export default function User_Manage_Page() {
   const [formData, setFormData] = useState({
@@ -46,7 +45,13 @@ export default function User_Manage_Page() {
 
   return (
     <div>
-      <NavBar/>
+      <header>
+        <nav>
+          <div id="main-logo">
+            <h1><a href="/">Project Xenia</a></h1>
+          </div>
+        </nav>
+      </header>
 
       <div className="ProfileManage_Container">
       <div id="ProfileManage">
