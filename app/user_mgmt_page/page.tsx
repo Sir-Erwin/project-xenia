@@ -17,7 +17,7 @@ export default function User_Management() {
     });
 
     try {
-      const res = await fetch('/api/route', {
+      const res = await fetch('user_mgmt_page/api/route', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
