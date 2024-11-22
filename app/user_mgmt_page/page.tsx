@@ -15,7 +15,7 @@ export default function User_Management() {
     });
 
     try {
-      const res = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/', {
+      const res = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/userManage/manage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ export default function User_Management() {
             <input type="text" placeholder="City" maxLength={100} id="cityInput" name="city" required />
           </div>
           <div className="inputbox">
-            <input type="text" placeholder="State" maxLength={2} id="stateInput" name="state" required />
+            <input type="text" placeholder="State (2 letter code)" maxLength={2} id="stateInput" name="state" required />
           </div>
           <div className="inputbox">
             <input type="text" placeholder="Zip Code" maxLength={9} minLength={5} id="zipCode" name="zipcode" required />
