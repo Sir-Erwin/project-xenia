@@ -123,7 +123,7 @@ export default function User_Manage_Page() {
             <input 
               type="text" 
               placeholder="Preferences" 
-              maxLength={500} 
+              maxLength={100} 
               name="preferences" 
               value={formData.preferences} 
               onChange={handleChange} 
