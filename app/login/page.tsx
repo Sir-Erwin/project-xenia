@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from "next/image";
 import './login_page.css';
 
 export default function Login_Page() {
@@ -22,7 +21,7 @@ export default function Login_Page() {
           <button type="submit" id="loginButton">Log in</button>
           
           <div className="register">
-            <p>Don't have an account? <a href="entry.html"> Register</a></p>
+            <p>Dont have an account? <a href="entry.html"> Register</a></p>
           </div>
         </form> 
       </div>
