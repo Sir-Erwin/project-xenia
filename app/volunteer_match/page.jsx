@@ -1,6 +1,9 @@
 'use client'; 
+
+"use client";
+
 import './volunteer_match.css'; 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from "../navbar";
 
  const VolunteerMatch = () => {
@@ -64,13 +67,7 @@ import NavBar from "../navbar";
 
     return (
         <div>
-            <header>
-                <nav>
-                <div id="main-logo">
-                    <h1><a href="/">Project Xenia</a></h1>
-                </div>
-                </nav>
-            </header>
+            <NavBar/>
 
             <div id='matchingContainer' className='matchingContainer'>
 

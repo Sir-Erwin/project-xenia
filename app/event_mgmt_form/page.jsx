@@ -1,5 +1,9 @@
-'use client'; 
+"use client";
+
+// import Image from "next/image";
+import React, {useState} from 'react';
 import './event_mgmt_form.css';
+import NavBar from "../navbar";
 
 const EventMgmtForm = () => {
     const [formData, setFormData] = useState({
@@ -52,13 +56,7 @@ const EventMgmtForm = () => {
 
     return (
         <div>
-            <header>
-                <nav>
-                <div id="main-logo">
-                    <h1><a href="/">Project Xenia</a></h1>
-                </div>
-                </nav>
-            </header>
+            <NavBar/>
 
             <div className='eventMgmtContainer'>
             
