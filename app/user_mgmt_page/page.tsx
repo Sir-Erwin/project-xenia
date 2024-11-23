@@ -21,8 +21,21 @@ export default function User_Manage_Page() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+
+export default function User_Management() {
+  const [state, setState] = useState<string>('');
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const formAction = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = new FormData(event.currentTarget);
+    const formObject: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value.toString();
+    });
+
+
     try {
       const response = await fetch('/routes/userManage', {
         method: 'POST',
