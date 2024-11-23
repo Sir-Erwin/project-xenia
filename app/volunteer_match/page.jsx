@@ -1,4 +1,6 @@
 
+"use client";
+
 import './volunteer_match.css'; 
 import React, {useState, useEffect} from 'react';
 import NavBar from "../navbar";

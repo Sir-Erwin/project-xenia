@@ -1,3 +1,5 @@
+"use client";
+
 import './volunteer_hi.css'; 
 import React, {useState, useEffect} from 'react';
 import NavBar from "../navbar";
