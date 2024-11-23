@@ -1,4 +1,5 @@
 // import Image from "next/image";
+import React, {useState} from 'react';
 import './event_mgmt_form.css';
 import NavBar from "../navbar";
 
