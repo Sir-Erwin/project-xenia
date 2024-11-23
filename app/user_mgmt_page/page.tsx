@@ -1,7 +1,9 @@
-'use client'; 
+
+"use client";
 
 import React, { useState } from 'react';
 import './user_manage.css';
+
 
 export default function User_Management() {
   const [state, setState] = useState<string>('');
@@ -16,10 +18,12 @@ export default function User_Management() {
 
     try {
       const res = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/userManage/manage', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+
         body: JSON.stringify(formObject),
       });
 
@@ -34,15 +38,27 @@ export default function User_Management() {
       setFormError(null); // Clear errors
     } catch (error) {
       setFormError('Failed to submit the form.');
+
     }
   };
 
   return (
-    <div className="ProfileManage_Container">
+    <div>
+      <header>
+        <nav>
+          <div id="main-logo">
+            <h1><a href="/">Project Xenia</a></h1>
+          </div>
+        </nav>
+      </header>
+
+      <div className="ProfileManage_Container">
+
       <div id="ProfileManage">
         <h1>User Profile Management</h1>
         <h2>Please fill out the following Information</h2>
         <hr />
+
         <form onSubmit={formAction}>
           {state && <p style={{ color: 'green' }}>{state}</p>}
           {formError && <p style={{ color: 'red' }}>{formError}</p>}
@@ -77,5 +93,6 @@ export default function User_Management() {
         </form>
       </div>
     </div>
+
   );
 }

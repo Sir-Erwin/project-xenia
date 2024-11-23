@@ -51,7 +51,16 @@ const EventMgmtForm = () => {
 
 
     return (
-        <div className='eventMgmtContainer'>
+        <div>
+            <header>
+                <nav>
+                <div id="main-logo">
+                    <h1><a href="/">Project Xenia</a></h1>
+                </div>
+                </nav>
+            </header>
+
+            <div className='eventMgmtContainer'>
             
         <div id = 'eventMgmt'>
             <h1>Event Management</h1>
@@ -116,6 +125,8 @@ const EventMgmtForm = () => {
             </form>
         </div>
         </div>
+        </div>
+        
     );
 }
 

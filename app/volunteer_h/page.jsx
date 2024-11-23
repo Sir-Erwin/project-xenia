@@ -1,5 +1,6 @@
 import './volunteer_hi.css'; 
 import React from 'react';
+import NavBar from "../navbar";
 
 const VolunteerHistory = () => {
   const [volunteerHistory, setVolunteerHistory] = useState([]);
@@ -29,7 +30,16 @@ const VolunteerHistory = () => {
   if (error) return <div>Error: {error}</div>;
   
     return (
-      <div className="history">
+      <div>
+        <header>
+          <nav>
+            <div id="main-logo">
+              <h1><a href="/">Project Xenia</a></h1>
+            </div>
+          </nav>
+        </header>
+
+        <div className="history">
         <h1>Volunteer  History</h1>
         <hr/>
         <table className="history-table">
@@ -53,6 +63,8 @@ const VolunteerHistory = () => {
           </tbody>
         </table>
       </div>
+      </div>
+      
     );
   };
   
