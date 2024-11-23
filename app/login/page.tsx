@@ -1,6 +1,6 @@
-'use client'; 
 import React, {useState} from 'react';
 import './login_page.css';
+import NavBar from "../navbar";
 
 
 export default function Login_Page() {
@@ -20,7 +20,7 @@ export default function Login_Page() {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
 
-      const data = await res.json()
+      const data = await res.json();
       console.log("Login successful: ", data);
     }catch (error) {
      console.error('Error during login:', error);
@@ -31,7 +31,10 @@ export default function Login_Page() {
 
 
   return (
-    <div className="Login_Container">
+    <div>
+      <NavBar/>
+
+      <div className="Login_Container">
       
       <div id="login">
         <h1>Login</h1>
@@ -54,6 +57,8 @@ export default function Login_Page() {
       </div>
   
     </div>
+    </div>
+    
   );
 }
 }

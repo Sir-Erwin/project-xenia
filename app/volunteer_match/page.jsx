@@ -1,7 +1,7 @@
 'use client'; 
 import './volunteer_match.css'; 
 import React from 'react';
-
+import NavBar from "../navbar";
 
  const VolunteerMatch = () => {
     const [volunteers, setVolunteers] = useState([]);
@@ -63,7 +63,16 @@ import React from 'react';
   };
 
     return (
-        <div id='matchingContainer' className='matchingContainer'>
+        <div>
+            <header>
+                <nav>
+                <div id="main-logo">
+                    <h1><a href="/">Project Xenia</a></h1>
+                </div>
+                </nav>
+            </header>
+
+            <div id='matchingContainer' className='matchingContainer'>
 
         <div id='match'>
                 <h1>Volunteer Matching</h1>
@@ -114,6 +123,8 @@ import React from 'react';
             </form>
         </div>
         </div>
+        </div>
+        
     );
 };
 

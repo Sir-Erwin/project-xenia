@@ -4,7 +4,8 @@
 }*/
 
 body {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../bg_image.jpg);
+
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../bg_image.jpg");
     background-size: cover;  /* Ensures the background covers the full area */
     background-position: center;  /* Centers the background image */
 
@@ -156,3 +157,35 @@ body {
   .dropdown2:hover  .dropdown-content2 {display: block;}
 
   .dropdown:hover  .dropdown-content {display: block;}
+
+
+  header {
+    width: 100%;
+    margin: 0 auto auto auto;
+    height: auto;
+  
+    background-color: rgb(28, 34, 34);
+  }
+  
+  nav {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+  }
+  
+  #main-logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  #main-logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-family: Arial, sans-serif;
+    text-decoration:solid;
+  
+    color: white;
+  }
