@@ -1,3 +1,4 @@
+'use client'; 
 import './volunteer_hi.css'; 
 import React from 'react';
 

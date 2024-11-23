@@ -1,4 +1,4 @@
-// import Image from "next/image";
+'use client'; 
 import './event_mgmt_form.css';
 
 const EventMgmtForm = () => {

@@ -1,3 +1,4 @@
+'use client'; 
 import React, {useState} from 'react';
 import './login_page.css';
 
@@ -15,11 +16,17 @@ export default function Login_Page() {
         },
         body: JSON.stringify([email,password]), 
       });
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
 
       const data = await res.json()
       console.log("Login successful: ", data);
+    }catch (error) {
+     console.error('Error during login:', error);
+     alert('An error occurred during login. Please try again.');
   }
-};
+
 
 
 
@@ -48,4 +55,5 @@ export default function Login_Page() {
   
     </div>
   );
+}
 }

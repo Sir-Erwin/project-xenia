@@ -1,4 +1,4 @@
-
+'use client'; 
 import './volunteer_match.css'; 
 import React from 'react';
 
