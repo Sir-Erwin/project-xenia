@@ -3,38 +3,31 @@ import React from 'react';
 import NavBar from "../navbar";
 
 const VolunteerHistory = () => {
-    // Example data for volunteer participation history
-    const volunteerHistory = [
-      {
-        id: 1,
-        volunteerName: 'Erwin Puthoor Manoj',
-        eventName: 'Church',
-        date: '2024-09-19',
-        status: 'On Site'
-      },
-      {
-        id: 2,
-        volunteerName: 'Joshua Rodriguez',
-        eventName: 'Foodbank',
-        date: '2024-09-19',
-        status: 'On Site'
-      },
-      {
-        id: 3,
-        volunteerName: 'Ahad Adesanya',
-        eventName: 'Daycare',
-        date: '2024-09-19',
-        status: 'On Site'
-      },
+  const [volunteerHistory, setVolunteerHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-      {
-        id: 4,
-        volunteerName: 'Ben Cornick',
-        eventName: 'School',
-        date: '2024-09-19',
-        status: 'On Site'
+  useEffect(() => {
+    const fetchVolunteerHistory = async () => {
+      try {
+        const response = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/events/allevents');
+        if (!response.ok) {
+          throw new Error("Failed to fetch volunteer history");
+        }
+        const data = await response.json();
+        setVolunteerHistory(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
       }
-    ];
+    };
+
+    fetchVolunteerHistory();
+  }, []);
+
+  if (loading) return <div>Loading volunteer history...</div>;
+  if (error) return <div>Error: {error}</div>;
   
     return (
       <div>

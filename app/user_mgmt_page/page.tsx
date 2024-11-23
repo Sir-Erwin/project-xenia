@@ -1,45 +1,44 @@
+
 "use client";
 
 import React, { useState } from 'react';
 import './user_manage.css';
 
-export default function User_Manage_Page() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    address1: '',
-    address2: '',
-    city: '',
-    state: '',
-    zipcode: '',
-    skills: '',
-    preferences: '',
-    availability: ''
-  });
 
-  const handleChange = (e:any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+export default function User_Management() {
+  const [state, setState] = useState<string>('');
+  const [formError, setFormError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+  const formAction = async (event: React.FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(event.currentTarget);
+    const formObject: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value.toString();
+    });
+
     try {
-      const response = await fetch('/routes/userManage', {
+      const res = await fetch('https://xenia-backend-ebc138112a56.herokuapp.com/userManage/manage', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+
+        body: JSON.stringify(formObject),
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Profile updated:', data);
-      } else {
-        console.error('Failed to update profile:', response.statusText);
+      if (!res.ok) {
+        const errorData = await res.json();
+        setFormError(errorData.message || 'An error occurred.');
+        return;
       }
+
+      const data = await res.json();
+      setState(`Success: ${data.message}`);
+      setFormError(null); // Clear errors
     } catch (error) {
-      console.error('Error occurred during submission:', error);
+      setFormError('Failed to submit the form.');
+
     }
   };
 
@@ -54,105 +53,46 @@ export default function User_Manage_Page() {
       </header>
 
       <div className="ProfileManage_Container">
+
       <div id="ProfileManage">
         <h1>User Profile Management</h1>
         <h2>Please fill out the following Information</h2>
         <hr />
-        <form id="ProfileInfo" onSubmit={handleSubmit}>
+
+        <form onSubmit={formAction}>
+          {state && <p style={{ color: 'green' }}>{state}</p>}
+          {formError && <p style={{ color: 'red' }}>{formError}</p>}
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="Full Name" 
-              maxLength={50} 
-              name="fullName" 
-              value={formData.fullName} 
-              onChange={handleChange} 
-              required 
-            />        
+            <input type="text" placeholder="Full Name" maxLength={50} id="nameInput" name="name" required />
           </div>
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="Address Line 1" 
-              maxLength={100} 
-              name="address1" 
-              value={formData.address1} 
-              onChange={handleChange} 
-              required 
-            />
+            <input type="email" placeholder="Email" maxLength={50} id="emailInput" name="email" required />
           </div>
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="Address Line 2 (optional)" 
-              maxLength={100} 
-              name="address2" 
-              value={formData.address2} 
-              onChange={handleChange} 
-            />
+            <input type="text" placeholder="Address Line 1" maxLength={100} id="address1Input" name="address1" required />
           </div>
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="City" 
-              maxLength={100} 
-              name="city" 
-              value={formData.city} 
-              onChange={handleChange} 
-              required 
-            />
-          </div>
-          <div className="dropdown">
-            <button type="button" className="dropbtn">State</button>
-            <div className="dropdown-content">
-              <a href="#" onClick={() => setFormData({ ...formData, state: 'TX' })}>TX</a>
-              {/* Dropdown Options will be stored in DB */}
-            </div>
+            <input type="text" placeholder="Address Line 2 (optional)" maxLength={100} id="address2Input" name="address2" />
           </div>
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="Zip Code" 
-              maxLength={9} 
-              minLength={5} 
-              name="zipcode" 
-              value={formData.zipcode} 
-              onChange={handleChange} 
-              required 
-            />
-          </div>
-          <div className="dropdown2">
-            <button type="button" className="dropbtn">Skills</button>
-            <div className="dropdown-content2">
-              <a href="#" onClick={() => setFormData({ ...formData, skills: 'Python' })}>Python</a>
-              {/* Dropdown Options will be stored in DB */}
-            </div>
+            <input type="text" placeholder="City" maxLength={100} id="cityInput" name="city" required />
           </div>
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="Preferences" 
-              maxLength={100} 
-              name="preferences" 
-              value={formData.preferences} 
-              onChange={handleChange} 
-            />
+            <input type="text" placeholder="State (2 letter code)" maxLength={2} id="stateInput" name="state" required />
           </div>
           <div className="inputbox">
-            <input 
-              type="text" 
-              placeholder="Volunteer Availability" 
-              name="availability" 
-              value={formData.availability} 
-              onChange={handleChange} 
-              required 
-            />
+            <input type="text" placeholder="Zip Code" maxLength={9} minLength={5} id="zipCode" name="zipcode" required />
           </div>
-          <button type="submit" id="sumbitInfo">Submit Information</button>
-        </form> 
+          <div className="inputbox">
+            <input type="text" placeholder="Preferences" maxLength={500} id="preferences" name="preferences" />
+          </div>
+          <div className="inputbox">
+            <input type="text" placeholder="Volunteer Availability" id="availability" name="availability" required />
+          </div>
+          <button type="submit" id="submitInfo">Submit Information</button>
+        </form>
       </div>
     </div>
-    </div>
-    
+
   );
 }
