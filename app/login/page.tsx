@@ -20,7 +20,7 @@ export default function Login_Page() {
         body: JSON.stringify([email,password]), 
       });
 
-      const data = await res.json()
+      const data = await res.json();
       console.log("Login successful: ", data);
   }
 };
