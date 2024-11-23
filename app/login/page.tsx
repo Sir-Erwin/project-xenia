@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, {useState} from 'react';
 
 import './login_page.css';
 import NavBar from "../navbar";
@@ -22,8 +22,10 @@ export default function Login_Page() {
 
       const data = await res.json();
       console.log("Login successful: ", data);
-  }
-};
+    } catch (error) {
+      console.error("Login failed: ", error);
+    }
+  };
 
 
 
