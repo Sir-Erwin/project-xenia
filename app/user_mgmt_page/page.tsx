@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import './user_manage.css';
+import NavBar from "../navbar";
 
 
 export default function User_Management() {
@@ -48,13 +49,7 @@ export default function User_Management() {
 
   return (
     <div>
-      <header>
-        <nav>
-          <div id="main-logo">
-            <h1><a href="/">Project Xenia</a></h1>
-          </div>
-        </nav>
-      </header>
+      <NavBar/>
 
       <div className="ProfileManage_Container">
 
