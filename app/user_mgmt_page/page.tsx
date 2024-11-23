@@ -12,6 +12,8 @@ export default function User_Management() {
   const formAction = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent default form submission
 
+    event.preventDefault(); // Prevent default form submission
+
     const formData = new FormData(event.currentTarget);
     const formObject: Record<string, string> = {};
     formData.forEach((value, key) => {
